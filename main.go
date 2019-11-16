@@ -3,6 +3,7 @@ package main
 import (
 	"agr-hack/internal/errors"
 	"agr-hack/internal/format"
+	"agr-hack/route"
 	"fmt"
 	"log"
 	"net/http"
@@ -54,8 +55,8 @@ func main() {
 		}
 	})
 
-	// route
-	e.GET("/", ping)
+	// route set
+	route.InitHandler(e)
 
 	// test file
 	dst, err := os.Create("test")
@@ -75,10 +76,6 @@ func main() {
 	log.Println("local ip address :", format.GetCMDColor(format.Color_green, address))
 	// start
 	e.Logger.Fatal(e.StartServer(s))
-}
-
-func ping(c echo.Context) error {
-	return c.JSON(http.StatusOK, "pin pin~~~poooooon!")
 }
 
 func getIP() (string, error) {
