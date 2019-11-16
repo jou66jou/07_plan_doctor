@@ -3,6 +3,7 @@ package main
 import (
 	"agr-hack/internal/errors"
 	"agr-hack/internal/format"
+	"agr-hack/internal/rice"
 	"agr-hack/route"
 	"fmt"
 	"log"
@@ -18,6 +19,7 @@ import (
 type Fields map[string]interface{}
 
 func main() {
+
 	e := echo.New()
 	// setting
 	s := &http.Server{
@@ -51,7 +53,12 @@ func main() {
 
 	// route set
 	route.InitHandler(e)
-
+	// data read
+	err := rice.Init()
+	if err != nil || rice.RiceInfo == nil {
+		log.Println("rice data open fail : ", err)
+		return
+	}
 	// test file
 	dst, err := os.Create("test")
 	if err != nil {

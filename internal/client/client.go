@@ -61,7 +61,32 @@ func (c *client) Sample() error {
 }
 
 type OneWeekWeatherResp struct {
-	Data interface{}
+	Data Locations `json:"records"`
+}
+type Locations struct {
+	LocatEle []LocatEle `json:"locations"`
+}
+type LocatEle struct {
+	LocatContent []Location `json:"location"`
+}
+type Location struct {
+	Name     string    `json:"locationName"`   // 地區名
+	LAT      string    `json:"lat"`            // 緯度
+	LON      string    `json:"lon"`            // 經度
+	Weathers []Weather `json:"weatherElement"` // 氣象資訊
+}
+type Weather struct {
+	Desc  string `json:"description"`
+	Times []Time `json:"time"`
+}
+type Time struct {
+	Elements []Ele  `json:"elementValue"`
+	Start    string `json:"startTime"`
+	End      string `json:"endTime"`
+}
+type Ele struct {
+	Mersures string `json:"measures"`
+	Value    string `json:"value"`
 }
 
 func (c *client) OneWeekWeather() (*OneWeekWeatherResp, *http.Response, error) {
@@ -80,16 +105,13 @@ func (c *client) OneWeekWeather() (*OneWeekWeatherResp, *http.Response, error) {
 
 	// 執行 HTTP Request
 	_, b, resp, reqErr := c.doRequest(req)
-	result := make(map[string]interface{})
-	err = json.Unmarshal(b, &result)
+	err = json.Unmarshal(b, data)
 	if err != nil {
-		return data, resp, errors.Wrap(err, "json Unmarshal failed")
+		return data, resp, errors.Wrap(err, "json Unmarshal failed : "+err.Error())
 	}
-
 	if reqErr != nil {
-		return data, resp, errors.Wrap(reqErr, "c.doRequest failed")
+		return data, resp, errors.Wrap(reqErr, "c.doRequest failed"+reqErr.Error())
 	}
-	data.Data = result
 	// 處理 Status 200 多的 response
 	return data, resp, nil
 

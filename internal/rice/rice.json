@@ -1,0 +1,151 @@
+{
+    "data": [
+        {
+            "name": "白葉枯病",
+            "occur": "3-4",
+            "crop": "1",
+            "area": "宜蘭",
+            "happenDesc": "分蘗盛期之後",
+            "plantAt": "2-6",
+            "temp ": "25-30",
+            "comment": "連續降雨（颱風）",
+            "condition": "temp,rh,water"
+        },
+        {
+            "name": "胡麻葉枯病",
+            "occur": "7-11",
+            "crop": "2",
+            "area": "土壤貧瘠或乾旱地區",
+            "happenDesc": "全期",
+            "plantAt": "7-11",
+            "temp ": "20-28 ",
+            "comment": "高濕",
+            "condition": "temp,rh"
+        },
+        {
+            "name": "水稻紋枯病",
+            "occur": "3-5,9-11",
+            "crop": "1,2",
+            "happenDesc": "分糵期中期-孕穗期",
+            "plantAt": "7-11",
+            "temp ": "24-28",
+            "RH": "81-92",
+            "comment": "雨後豔陽高照",
+            "condition": "temp,rh"
+        },
+        {
+            "name": "稻細菌性穀枯病",
+            "occur": "10-11",
+            "crop": "2",
+            "area": "中南部",
+            "happenDesc": "乳熟期",
+            "plantAt": "7-11",
+            "temp ": "30-35",
+            "comment": "高溫多日照，降雨量少",
+            "condition": "sun,temp,dry"
+        },
+        {
+            "name": "水稻黃葉病",
+            "occur": "7-8",
+            "crop": "2",
+            "area": "中部,南部, 東部",
+            "happenDesc": "播種前, 秧苗期",
+            "plantAt": "7-11",
+            "temp ": "26-28",
+            "comment": "媒介昆蟲傳播",
+            "condition": "temp"
+        },
+        {
+            "name": "稻粒黑粉病",
+            "occur": "3-10",
+            "temp ": "25-30",
+            "comment": "大氣RH高",
+            "condition": "temp,rh"
+        },
+        {
+            "name": "細菌性條斑病",
+            "occur": "8-9",
+            "crop": "2",
+            "area": "中部",
+            "happenDesc": "分蘗盛期",
+            "plantAt": "7-11",
+            "temp ": "28-30",
+            "comment": "颱風過後、高溫多濕",
+            "condition": "temp,rh"
+        },
+        {
+            "name": "稻葉鞘腐敗病",
+            "occur": "10-11",
+            "crop": "2",
+            "area": "台南",
+            "happenDesc": "抽穗期",
+            "plantAt": "7-11",
+            "temp ": "30-31",
+            "comment": "連續降雨，土壤潮濕",
+            "condition": "temp,rh"
+        },
+        {
+            "name": "苗稻熱病",
+            "occur": "2-3",
+            "crop": "1",
+            "area": "全台",
+            "happenDesc": "秧苗期",
+            "plantAt": "2-6",
+            "temp ": "20-28",
+            "RH": "90-",
+            "comment": "日照不足，日夜溫差大，植物防禦能力下降，易感病",
+            "condition": "moon,orverTemp,rh"
+        },
+        {
+            "name": "葉稻熱病",
+            "occur": "2-3",
+            "crop": "1",
+            "area": "全台",
+            "happenDesc": "秧苗期",
+            "plantAt": "2-7",
+            "temp ": "20-28",
+            "RH": "90-",
+            "comment": "日照不足，日夜溫差大，植物防禦能力下降，易感病",
+            "condition": "moon,orverTemp,rh"
+
+        },
+        {
+            "name": "節稻熱病",
+            "occur": "5-6",
+            "crop": "1",
+            "area": "全台",
+            "happenDesc": "抽穗期後",
+            "plantAt": "2-8",
+            "temp ": "20-28",
+            "RH": "90-",
+            "comment": "日照不足，日夜溫差大，植物防禦能力下降，易感病",
+            "condition": "moon,orverTemp,rh"
+
+        },
+        {
+            "name": "葉舌稻熱病",
+            "occur": "2-4",
+            "crop": "1",
+            "area": "全台",
+            "happenDesc": "分糵期",
+            "plantAt": "2-9",
+            "temp ": "20-28",
+            "RH": "90-",
+            "comment": "日照不足，日夜溫差大，植物防禦能力下降，易感病",
+            "condition": "moon,orverTemp,rh"
+
+        },
+        {
+            "name": "穗稻熱病",
+            "occur": "5-6",
+            "crop": "1",
+            "area": "全台",
+            "happenDesc": "抽穗後",
+            "plantAt": "2-10",
+            "temp ": "20-28",
+            "RH": "90-",
+            "comment": "日夜溫差大，氮肥施加過多，易感病",
+            "condition": "moon,orverTemp,overN,rh"
+        }
+    ]
+}
