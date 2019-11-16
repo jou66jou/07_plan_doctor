@@ -1,0 +1,1218 @@
+{
+ "cwbdata": {
+  "@xmlns": "urn:cwb.gov.tw:cwbdata-0.1",
+  "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+  "@xsi:schemaLocation": "urn:cwb.gov.tw:cwbdata-0.1 http://odtest.cwb.gov.tw/XSD/CWB-data-0.1.xsd",
+  "identifier": "472c7047-eb48-4aa1-8fc0-9be46a234889",
+  "datasetID": "F-AMD-2001",
+  "datasetName": "農業氣象預報",
+  "dataItemID": "F-AMD-2001-00001",
+  "sender": "weather@cwb.gov.tw",
+  "sent": "2019-11-15T01:37:32+08:00",
+  "status": "Actual",
+  "scope": "Public",
+  "msgType": "Issue",
+  "publisherOID": "2.16.886.101.20003.20008.20004",
+  "resources": {
+   "resource": {
+    "metadata": {
+     "resourceName": "中央氣象局氣候服務_農業氣象一週預報",
+     "resourceDescription": "提供氣象局預報資料和農事建議，供農業相關單位及農民參考",
+     "language": "zh",
+     "homepage": "https://www.cwb.gov.tw/V7/forecast/week/w44.htm",
+     "sources": {
+      "source": [
+       {
+        "title": "1週預報",
+        "path": "https://www.cwb.gov.tw/V7/forecast/week/week.htm"
+       },
+       {
+        "title": "長期天氣預報-季長期天氣展望",
+        "path": "https://opendata.cwb.gov.tw/catalog%3fgroup%3df%26dataid%3dA0013-002"
+       },
+       {
+        "title": "天氣特報-豪大雨特報",
+        "path": "https://opendata.cwb.gov.tw/catalog%3fgroup%3dw%26dataid%3dC0033-003"
+       }
+      ]
+     },
+     "temporal": {
+      "issueTime": "2019-11-15T17:00:00+08:00",
+      "validTime": {
+       "startTime": "2019-11-16T00:00:00+08:00",
+       "endTime": "2019-11-23T00:00:00+08:00"
+      }
+     },
+     "weatherElements": {
+      "weatherElement": [
+       {
+        "tagName": "weather",
+        "description": "天氣描述"
+       },
+       {
+        "tagName": "temperature",
+        "description": "氣溫",
+        "units": "˚C"
+       },
+       {
+        "tagName": "agrWeatherForecasts",
+        "description": "一週農業天氣預報"
+       },
+       {
+        "tagName": "weatherProfile",
+        "description": "天氣概況"
+       },
+       {
+        "tagName": "weatherForecasts",
+        "description": "天氣預報"
+       },
+       {
+        "tagName": "agrAdvices",
+        "description": "農事建議"
+       },
+       {
+        "tagName": "degreeDay",
+        "description": "度日(植物發育時所需之有效溫度單位)",
+        "units": "GDD"
+       },
+       {
+        "tagName": "accumulatedTemperature",
+        "description": "積溫(植物發育過程中，當各生育階段有效溫度累積至一定數值時，即可完成發育。該數值即稱為此一發育階段所需的積溫。)",
+        "units": "ATU"
+       },
+       {
+        "tagName": "cardinalTemperatures",
+        "description": "作物生長溫度區間",
+        "units": "˚C",
+        "statisticalMethods": {
+         "statisticalMethod": [
+          {
+           "methodTagName": "minimum",
+           "description": "生長最低溫"
+          },
+          {
+           "methodTagName": "maximum",
+           "description": "生長最高溫"
+          },
+          {
+           "methodTagName": "optimum",
+           "description": "生長最適溫"
+          }
+         ]
+        }
+       },
+       {
+        "tagName": "growingDays",
+        "description": "生育日數"
+       },
+       {
+        "tagName": "cropStatistics",
+        "description": "農業積溫統計"
+       },
+       {
+        "tagName": "agrReport",
+        "description": "其他建議"
+       },
+       {
+        "tagName": "section",
+        "description": "其他建議主段落"
+       },
+       {
+        "tagName": "subsection",
+        "description": "其他建議副段落"
+       }
+      ]
+     }
+    },
+    "data": {
+     "agrWeatherForecasts": {
+      "weatherProfile": "16日東北季風稍減弱,各地大多為多雲到晴,早晚仍涼,日夜溫差大。17日北部、東半部地區及恆春半島將轉為有局部短暫陣雨,其他地區為多雲。18日鋒面通過及東北季風增強,北部及東北部天氣轉涼,其他地區早晚亦涼;北部及東北部地區有短暫陣雨,東部、東南部地區及中南部山區亦有局部短暫雨,其他地區為多雲。19日、20日東北季風影響,北部及東北部天氣較涼,其他地區早晚亦涼;北部、東半部地區及中南部山區有短暫雨,其他地區為多雲。21日起東北季風稍減弱,21日、22日北部、東半部地區及中南部山區有短暫雨,其他地區為多雲。16日、17日東部、東南部(含蘭嶼、綠島)及恆春半島沿海地區有長浪發生的機率,17日基隆北海岸亦有長浪發生的機率,請注意。",
+      "weatherForecasts": {
+       "location": [
+        {
+         "locationName": "北部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "多雲",
+             "weatherid": "4"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "多雲短暫陣雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "陰短暫雨",
+             "weatherid": "11"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "29"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "30"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "25"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "23"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "26"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "28"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "16"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "16"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "16"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "16"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "19"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "locationName": "中部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "多雲",
+             "weatherid": "4"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "多雲時陰",
+             "weatherid": "5"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "多雲",
+             "weatherid": "4"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "多雲",
+             "weatherid": "4"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "31"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "31"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "30"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "29"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "30"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "31"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "16"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "17"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "17"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "17"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "20"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "locationName": "南部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "多雲時晴",
+             "weatherid": "3"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "多雲",
+             "weatherid": "4"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "陰時多雲",
+             "weatherid": "6"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "多雲",
+             "weatherid": "4"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "陰時多雲",
+             "weatherid": "6"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "31"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "31"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "31"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "29"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "29"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "30"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "30"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "21"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "21"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "locationName": "東北部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "多雲短暫陣雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "陰時多雲短暫陣雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "陰短暫雨",
+             "weatherid": "11"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "25"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "22"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "23"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "25"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "26"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "20"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "17"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "17"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "21"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "locationName": "東部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "陰時多雲短暫陣雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "陰短暫雨",
+             "weatherid": "11"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "24"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "25"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "28"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "21"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "21"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "18"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "20"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "21"
+            }
+           ]
+          }
+         }
+        },
+        {
+         "locationName": "東南部地區",
+         "weatherElements": {
+          "Wx": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "weather": "晴時多雲",
+             "weatherid": "2"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "weather": "多雲時陰短暫陣雨",
+             "weatherid": "9"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "weather": "陰時多雲短暫雨",
+             "weatherid": "10"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "weather": "陰短暫雨",
+             "weatherid": "11"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "weather": "多雲短暫雨",
+             "weatherid": "8"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "weather": "陰短暫雨",
+             "weatherid": "11"
+            }
+           ]
+          },
+          "MaxT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "29"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "25"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "27"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "28"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "28"
+            }
+           ]
+          },
+          "MinT": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "temperature": "20"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "temperature": "22"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "temperature": "21"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "temperature": "20"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "temperature": "19"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "temperature": "20"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "temperature": "21"
+            }
+           ]
+          }
+         }
+        }
+       ]
+      },
+      "agrAdvices": {
+       "agrForecasts": {
+        "location": [
+         {
+          "locationName": "北部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "12.5",
+             "accumulatedTemperature": "12.5"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "26.5"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "11.5",
+             "accumulatedTemperature": "38.0"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "9.5",
+             "accumulatedTemperature": "47.5"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "11.0",
+             "accumulatedTemperature": "58.5"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "11.5",
+             "accumulatedTemperature": "70.0"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "83.5"
+            }
+           ]
+          }
+         },
+         {
+          "locationName": "中部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "13.5"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "27.5"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "42.0"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "12.5",
+             "accumulatedTemperature": "54.5"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "13.0",
+             "accumulatedTemperature": "67.5"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "81.5"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "15.5",
+             "accumulatedTemperature": "97.0"
+            }
+           ]
+          }
+         },
+         {
+          "locationName": "南部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "15.0",
+             "accumulatedTemperature": "15.0"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "29.5"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "16.0",
+             "accumulatedTemperature": "45.5"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "59.5"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "73.0"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "87.5"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "15.5",
+             "accumulatedTemperature": "103.0"
+            }
+           ]
+          }
+         },
+         {
+          "locationName": "東北部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "12.5",
+             "accumulatedTemperature": "12.5"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "26.0"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "11.5",
+             "accumulatedTemperature": "37.5"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "9.5",
+             "accumulatedTemperature": "47.0"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "10.0",
+             "accumulatedTemperature": "57.0"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "11.5",
+             "accumulatedTemperature": "68.5"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "82.0"
+            }
+           ]
+          }
+         },
+         {
+          "locationName": "東部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "13.5"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "28.0"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "42.0"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "11.0",
+             "accumulatedTemperature": "53.0"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "11.5",
+             "accumulatedTemperature": "64.5"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "13.5",
+             "accumulatedTemperature": "78.0"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "92.5"
+            }
+           ]
+          }
+         },
+         {
+          "locationName": "東南部地區",
+          "weatherElements": {
+           "daily": [
+            {
+             "dataDate": "2019-11-16",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "14.0"
+            },
+            {
+             "dataDate": "2019-11-17",
+             "degreeDay": "15.5",
+             "accumulatedTemperature": "29.5"
+            },
+            {
+             "dataDate": "2019-11-18",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "44.0"
+            },
+            {
+             "dataDate": "2019-11-19",
+             "degreeDay": "12.5",
+             "accumulatedTemperature": "56.5"
+            },
+            {
+             "dataDate": "2019-11-20",
+             "degreeDay": "13.0",
+             "accumulatedTemperature": "69.5"
+            },
+            {
+             "dataDate": "2019-11-21",
+             "degreeDay": "14.0",
+             "accumulatedTemperature": "83.5"
+            },
+            {
+             "dataDate": "2019-11-22",
+             "degreeDay": "14.5",
+             "accumulatedTemperature": "98.0"
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "cropStatistics": {
+        "crop": {
+         "cropName": "水稻",
+         "cardinalTemperatures": {
+          "growingStage": {
+           "description": "稻作生長溫度",
+           "minimum": "10",
+           "maximum": "40"
+          }
+         },
+         "location": [
+          {
+           "locationName": "花蓮地區",
+           "cropBreed": "臺農67號",
+           "statistics": {
+            "fifteenYears": {
+             "description": "二期稻作生育日數及生育期總積溫(15年平均值)",
+             "timePeriod": [
+              {
+               "description": "插秧至抽穗",
+               "growingDays": "71",
+               "accumulatedTemperature": "1184.31"
+              },
+              {
+               "description": "插秧至收穫",
+               "growingDays": "119",
+               "accumulatedTemperature": "1778.01"
+              }
+             ]
+            },
+            "thisYear": {
+             "description": "108年二期稻作積溫值 (各改良場豐歉試驗臺農67號)",
+             "dibblingDate": "2019-08-07",
+             "timePeriod": {
+              "description": "插秧至本日",
+              "startDate": "2019-08-07",
+              "endDate": "2019-11-14",
+              "growingDays": "100",
+              "accumulatedTemperature": "1518.3"
+             }
+            }
+           }
+          },
+          {
+           "locationName": "臺中地區",
+           "cropBreed": "臺農67號",
+           "statistics": {
+            "fifteenYears": {
+             "description": "二期稻作生育日數及生育期總積溫(15年平均值)",
+             "timePeriod": [
+              {
+               "description": "插秧至抽穗",
+               "growingDays": "66",
+               "accumulatedTemperature": "1203.35"
+              },
+              {
+               "description": "插秧至收穫",
+               "growingDays": "107",
+               "accumulatedTemperature": "1794.83"
+              }
+             ]
+            },
+            "thisYear": {
+             "description": "108年二期稻作積溫值 (各改良場豐歉試驗臺農67號)",
+             "dibblingDate": "2019-08-03",
+             "timePeriod": {
+              "description": "插秧至本日",
+              "startDate": "2019-08-03",
+              "endDate": "2019-11-14",
+              "growingDays": "104",
+              "accumulatedTemperature": "1761.05"
+             }
+            }
+           }
+          }
+         ]
+        }
+       },
+       "agrReport": {
+        "section": [
+         {
+          "content": "近期除受東北季風強弱變化影響,而後加上部分地區將可能受到位於臺灣南方之海鷗(第26號颱風)水氣影響;北部、東半部地區及中南部有局部短暫雨,而其他各地大多為多雲的天氣。明(16日)東北季風稍減弱,各地大多為多雲到晴,早晚仍涼,日夜溫差大。而下週日(17日)北部、東半部地區及恆春半島有局部短暫陣雨,其他地區為多雲。至下週一(18日)鋒面通過及東北季風增強,北部及東北部天氣轉涼,其他地區早晚亦涼;北部及東北部地區有短暫陣雨,東部、東南部地區及中南部山區亦有局部短暫陣雨,其他地區為多雲。近期因部分地區有降雨且日夜溫差大,仍具農作物病蟲害好發條件,籲請農友持續做好田間病蟲害管理,並參考本局提供更精細之368鄉鎮天氣預報資訊,以有效規劃相關作業。",
+          "subsection": [
+           {
+            "content": "東北季風影響期間,籲請相關地區農友做好水稻、雜糧、園藝等作物防範措施,並請提防病蟲為害,各類措施分述如下:1、水稻:宜適度調節田間給水供灌及適時預防白葉枯病、螟蟲與鳥害等;並適時收割、乾燥。2、雜糧、園藝(含各類果樹、蔬菜)作物:留意園區宜適度給水供灌與適時各類病蟲害之預防,並適時收穫、乾燥、調製;天氣逐漸趨涼,亦請種植相關作物且符合疫病好發條件地區之農友提前留意白粉病、晚疫病等相關病害防治。3、籲請農友持續加強田間作物病蟲害防治,以確保農作收益。請特別留意田間綜合管理(IPM)、合理化施肥之重要性;採溫(網)室等設施栽培之地區請注意溫度調節,以利作物生長。4、時序將進入秋、冬季時,預期降雨量將減少、請節約用水,有效應用水資源。"
+           },
+           {
+            "content": "中南部請利用天氣相對穩定時進行收割作業,請二期稻作已屆收穫期之農友與代耕業者排程收穫,當稻穀呈現金黃色,僅末端2∼3粒稻穀黃綠色時,為最佳收穫期。適時收穫稻穀飽滿度高、品質佳、濕度低折算乾穀重量多、收益增加。"
+           },
+           {
+            "content": "籲請降雨地區之農友於雨後進行田間清園工作確保作物收成。"
+           }
+          ]
+         },
+         {
+          "content": "嚴防「瓜果實蠅、夜蛾類」疫情發生,籲請農友持續加強防疫工作:",
+          "subsection": [
+           {
+            "content": "雨後適合瓜果實蠅及夜蛾類發生,預防勝於治療,請務必全面加強防疫工作,嚴防疫情發生。"
+           },
+           {
+            "content": "夜蛾類,包括斜紋夜蛾、甜菜夜蛾、番茄夜蛾等三種害蟲之田間密度逐漸升高,夜蛾類害蟲防治應注意下列事項:1、田間如發現夜蛾類害蟲卵塊、幼蟲,應立即捕殺或摘除。2、夜蛾類幼蟲及成蟲大多於太陽下山或傍晚時分開始活動,傍晚噴藥效果較佳,噴灑時應注意使用充足水量。3、參考植物保護資訊系統推薦用藥,選擇藥劑交互使用,以避免害蟲產生抗藥性。4、利用性費洛蒙長期誘殺雄蛾,以降低其田間密度。每公頃設5∼10個點,放置高度約為離地150公分或作物生長點上方30∼60公分,每月更新誘餌一次。作物種植密集地區應採共同防治,成效更佳。5、注意清園之工作,間作之作物應同時施藥,徹底清除蟲源。6、旱田作物於種植前整地翻犁後浸水一天以上,可將土中的蛹或幼蟲淹死。7、收穫前注意化學藥劑的使用,或改用蘇力菌防治,注意安全採收期,以免造成農藥殘留過量之問題。8、受害嚴重之綠肥作物或廢耕田區應儘速翻犁淹水,避免夜蛾類滋生蔓延。"
+           },
+           {
+            "content": "果實蠅防治建請持續懸掛「含毒甲基丁香油」誘餌之滅雄技術,配合果園遮蔭處懸掛黃色誘蟲黏紙,壓制果實蠅族群發展,並隨時清除田間受害落果可避免孳生蟲源,果實即時套袋可阻隔果實蠅產卵。"
+           },
+           {
+            "content": "瓜實蠅防治工作首重瓜園的田間衛生管理,種植前田間淹水,隨時清除落果,以避免孳生蟲源,或懸掛黃色黏板黏捕成蟲,亦可同時採取「克蠅」滅雄防治及減少孳生源,整合性管理壓制瓜實蠅危害。請選用核准登記及推薦使用的藥劑,藥劑種類可於臺南改良場網站連結各項作物的用藥資料:https://www.tndais.gov.tw/ws.php?id=382。使用藥劑應嚴格遵守安全採收期。(參考資料來源:行政院農業委員會動植物防疫檢疫局、雲林縣政府、行政院農業委員會臺南區農業改良場)"
+           }
+          ]
+         },
+         {
+          "content": "籲請相關地區農友做好雨後清園工作確保作物收成,以下列作物為例:",
+          "subsection": [
+           {
+            "content": "木瓜:1、風雨後倒伏之植株,速以支柱扶起四十五度(不可扶正),勿使果實接觸地面,同實行幹基培土,以免根部積水腐敗。2、速以黑色塑膠網或水泥袋紙包覆果實。3、雨後容易發生果實疫病,應立即參照植物保護推廣方法,全園徹底防治。4、視植株受害及復原程度,適時適量疏果及施肥,促使樹勢迅速恢復。"
+           },
+           {
+            "content": "香蕉:1、雨後加強蕉園排水:香蕉雖為喜水性質物,但同時亦忌淹水,香蕉根系若淹水超過24小時,即受傷害,影響生育,產期延後15∼45天不等,故若雨後蕉園積水,應儘速設法排水,促進新根發育,恢復植株生機。2、加強清園工作:雨後折斷殘株,應儘快清理。倒伏無用植株,以鋤切斷為碎塊,促其腐化,以免導致病蟲危害。"
+           },
+           {
+            "content": "楊桃:1、剪除大雨造成之折斷枝葉,促使新梢生長,儘速恢復樹勢。2、摘除大雨時受損花果,使養分集中於未受害的花果,減輕損失。3、清除雨後園地落果,以免病蟲害快速繁衍。"
+           },
+           {
+            "content": "芭樂:排除田間積水、修剪、斷枝及落果清除並積極進行病害防治(瘡痂病、疫病、炭疽病等)。"
+           },
+           {
+            "content": "蓮霧:1、雨後倒伏之植株,速以支柱扶起,視受害程度,適量剪除枝、葉,以平衡水分,並行培土促生新根。2、雨後果實、受損枝葉易感染病害,應參照植物保護推廣手冊選擇推薦藥劑,全園徹底防治。3、清園並剪除受損枝條,避免病蟲害發生及促進生長。4、地面及葉面酌施追肥,以氮肥為主,磷鉀肥次之的肥料,以促進恢復樹勢。"
+           }
+          ]
+         },
+         {
+          "content": "二期水稻好發白葉枯病,籲請符合疫病條件地區農友持續防治作業:",
+          "subsection": [
+           {
+            "content": "水稻白葉枯病為細菌性病害,主要危害葉片或葉鞘,受感染時常在離葉尖數公分處的葉緣出現水浸狀小斑,然後逐漸延長而成二側波浪狀枯黃病葉。露水未乾時,細菌會在葉緣水孔溢泌菌泥,隨人員走動或雨水傳播。"
+           },
+           {
+            "content": "防治對策:1、常發病地區及風大地區避免種植感病品種。2、勿用手拔及剪除水稻葉尖,以避免病原菌由傷口侵入。3、避免行株距過窄,容易不通風溼度較高。4、合理化施肥,避免過量氮肥。5、清除田間雜草。6、雨後及露水未乾前避免噴藥或進入田區,以減少人為傳播病菌。7、發病稻田翻耕後浸水二週以上,降低下期初次感染源。8、化學防治請選用核准登記及推薦使用的藥劑,請參閱農藥資訊服務網http://pesticide.baphiq.gov.tw。(參考資料來源:行政院農業委員會動植物防疫檢疫局)"
+           }
+          ]
+         },
+         {
+          "content": "掌握秋行軍蟲防治黃金時期正確施藥,確保農友收益:",
+          "subsection": [
+           {
+            "content": "「秋行軍蟲災害緊急應變小組」(簡稱應變小組)表示,秋行軍蟲偏好取食植株幼嫩時期,於作物苗期階段,早期發現正確防治,效果最佳。秋行軍蟲習性與斜紋夜蛾差異大,鑽入植株心葉即不移動,防治斜紋夜蛾之施藥方法對秋行軍蟲效果並不好,農友應重新調整。此外,用藥時機及藥劑種類與防治效果有密切相關,目前公告之秋行軍蟲緊急防治藥劑多屬觸殺型藥劑,農友施用時須慎選施藥機具及方法,藥劑用水量須足夠,且放慢施藥速度,須確保藥劑能滲入心葉,接觸蟲體,防治效果才會好。農友如有防治相關技術問題,均可就近洽詢農委會所屬各區農業改良場專家。"
+           },
+           {
+            "content": "為確保秋行軍蟲公告緊急防治藥劑之防治效果,亦借重國立臺灣大學、中興大學、嘉義大學及屏東科技大學四所大學植物醫師團隊之專業人才,執行玉米及高粱秋行軍蟲緊急防治藥劑田間藥效試驗,結果證實於作物受害初期之苗期階段時,選用適當機具且正確使用防治藥劑情況下,均有良好防治成效。"
+           },
+           {
+            "content": "應變小組強調,有機田區核准使用之蘇力菌因作用機制屬於中腸毒性,須經蟲體攝食後才有毒殺效果,當施用時機過晚,蟲體如已蛀入心葉後,防治效果則相對較差,農友應多加留意;因秋行軍蟲易產生抗藥性,防治應輪替使用不同作用機制藥劑。為協助農民正確施藥,以達最佳防治效果,農委會所屬各區農業改良場均有提供相關諮詢服務及用藥技術指導,農友有需求可於上班時間撥打各區農業改良場諮詢專線(行政院農業委員會桃園區農業改良場03-4760852;苗栗區農業改良場037-236619;臺中區農業改良場04-8523101;臺南區農業改良場06-5912901;高雄區農業改良場08-7389060;花蓮區農業改良場03-8535915;臺東區農業改良場089-325110),農委會動植物防疫檢疫局另提供24小時免付費專線0800-039-131。"
+           },
+           {
+            "content": "為防杜秋行軍蟲蔓延危害,種植玉米農友應主動赴田間主動巡查,如有發現疑似秋行軍蟲個體,可透過防檢局防疫小尖兵臉書或防檢局LINE@進行通報並上傳照片、影像,以利快速鑑定並採取緊急防治措施;另為提升農民秋行軍蟲辨識及自主管理能力,農委會所屬試驗場所及各地方政府針對重點產區持續密集辦理秋行軍蟲宣導講習。"
+           },
+           {
+            "content": "截至11月14日止,全國各縣市共有秋行軍蟲幼蟲確診案場發生面積共約17,618公頃;其中管制面積17,570公頃,解列面積48公頃;已處理面積17,442公頃,待處理面積176公頃。秋行軍蟲相關疫情資訊,每日更新於「秋行軍蟲專區」(網址:http://faw.baphiq.gov.tw/)。(參考資料來源:行政院農業委員會動植物防疫檢疫局)"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "remark": [
+       "註1:天氣預報中,各縣市預報以各縣市政府所在地附近為預報參考位置。",
+       "註2:天氣預報高低氣溫出現同值時,表示兩者差距在1℃以內。",
+       "註3:度日(Degree-days):植物發育時所需之有效溫度單位。",
+       "註4:積溫:植物發育過程中,當各生育階段有效溫度累積至一定數值時,即可完成發育。該數值即稱為此一發育階段所需的積溫。",
+       "註5:分別以臺中區農改場、高雄區農改場及花蓮區農改場所進行豐欠試驗稻作和氣象觀測資料進行稻作積溫值計算。",
+       "註6:稻作積溫值計算出現「-」符號表示該地目前尚未插秧或已經收割。",
+       "註7:稻作最低、最高生長溫度以10℃、40℃為基準。"
+      ]
+     }
+    }
+   }
+  }
+ }
+}
