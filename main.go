@@ -15,19 +15,13 @@ import (
 	"github.com/labstack/echo"
 )
 
-const (
-	apiKey = "CWB-B598382E-A64D-4809-B598-5C434E4FCEAB"
-
-	oneWeekWeather = "https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-A0010-001?Authorization=CWB-B598382E-A64D-4809-B598-5C434E4FCEAB&downloadType=WEB&format=JSON"
-)
-
 type Fields map[string]interface{}
 
 func main() {
 	e := echo.New()
 	// setting
 	s := &http.Server{
-		Addr:         ":1323",
+		Addr:         ":1234",
 		ReadTimeout:  1 * time.Minute,
 		WriteTimeout: 1 * time.Minute,
 	}
