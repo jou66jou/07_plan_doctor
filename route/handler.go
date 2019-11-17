@@ -117,7 +117,7 @@ func warningAnalysis(weathers *client.OneWeekWeatherResp) (resp *WarningResp, er
 		}
 	}
 
-	return getResult()
+	return resultData()
 }
 
 func checkConditions(r rice.Data, conditions []string, weathers *client.OneWeekWeatherResp) (local *LocationInfo, err error) {
@@ -222,7 +222,7 @@ func checkRangeMonth(rangeMonth []string) bool {
 	return false
 }
 
-func getResult() (resp *WarningResp, err error) {
+func resultData() (resp *WarningResp, err error) {
 	resp = &WarningResp{}
 	// Open our jsonFile
 	jsonFile, err := os.Open("internal/rice/rice_result.json")
@@ -231,6 +231,54 @@ func getResult() (resp *WarningResp, err error) {
 		return nil, err
 	}
 	fmt.Println("Successfully Opened rice_result.json")
+	// defer the closing of our jsonFile so that we can parse it later on
+	defer jsonFile.Close()
+	// read our opened xmlFile as a byte array.
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	// we unmarshal our byteArray which contains our
+	// jsonFile's content into 'users' which we defined above
+	err = json.Unmarshal(byteValue, resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+type HistoryResp struct {
+	Data []History `json:"data"`
+}
+type History struct {
+	Year         string        `json:"year"` // 病害名稱
+	Crop         string        `json:"crop"` // 溫度
+	HistoryInfos []HistoryInfo `json:"locationInfos"`
+}
+type HistoryInfo struct {
+	LocationName string `json:"locationName"` // 地區名
+	LAT          string `json:"lat"`          // 緯度
+	LON          string `json:"lon"`          // 經度
+	Date         string `json:"date"`         // 發布日期
+	Disease      string `json:"disease"`      // 疾病名稱
+}
+
+func getHistory(c echo.Context) error {
+	resp, err := historyData()
+	if err != nil {
+		return errors.NewWithMessage(errors.ErrInternalError, "getHistory err : "+err.Error())
+	}
+	return c.JSON(http.StatusOK, resp)
+}
+
+func historyData() (resp *HistoryResp, err error) {
+	resp = &HistoryResp{}
+	// Open our jsonFile
+	jsonFile, err := os.Open("internal/rice/rice_history.json")
+	// if we os.Open returns an error then handle it
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println("Successfully Opened rice_history.json")
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 	// read our opened xmlFile as a byte array.
