@@ -35,9 +35,23 @@ func main() {
 	// CORS restricted
 	// Allows requests from any `https://labstack.com` or `https://labstack.net` origin
 	// wth GET, PUT, POST or DELETE method.
+	// 所有 API 皆經過 CORS middeware
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://coop2019-front.herokuapp.com/"},
-		AllowMethods: []string{http.MethodGet, http.MethodPut, http.MethodPost, http.MethodDelete},
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{
+			http.MethodGet,
+			http.MethodPost,
+			http.MethodPut,
+			http.MethodDelete,
+			http.MethodPatch,
+		},
+		AllowHeaders: []string{
+			"*",
+			echo.HeaderAuthorization,
+			echo.HeaderContentType,
+			echo.HeaderOrigin,
+			echo.HeaderContentLength,
+		},
 	}))
 	e.Debug = false
 	e.HTTPErrorHandler = errors.HTTPErrorHandlerForEcho
