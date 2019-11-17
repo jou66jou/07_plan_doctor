@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 57vh;
+            margin-top: 155px;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 50vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .infowindow {
+            width: 180px;
+            height: 40px;
+        }
+
+        .imgThumb {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px 0 0;
+        }
+
+        .infowindow h4 {
+            margin: 2px 0 0 0 !important;
+            font-size: 14px;
+        }
+
+        .infowindow h6 {
+            margin: 0 !important;
+            font-size: 12px;
+        }
+
+        .infotext {
+            display: inline-block;
+            width: 140px;
+            vertical-align: top;
+            margin-top: -7px;
+        }
+
+        .infotext div:nth-child(1) {
+            width: 120px;
+            display: inline-block;
+        }
+
+        .infotext div:nth-child(2) {
+            width: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <% include ./main_disease %>
+    <div id="map"></div>
+    <% include ./footer_disease %>
+
+    <div id="infoModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="padding:10px;border-radius: 10px;">
+                <img style="width:100%;height:210px;margin:0 0 10px 0;border-radius: 5px;"
+                    src="http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg" />
+                <h6 class="text-danger" style="font-size: 14px;">最後通報</h6>
+                <h5>2019/07/12 13:59:10</h5>
+                <h7 style="font-size: 12px;">24.994711, 121.577343</h7>
+                <hr style="width: 100%; height: 0.5px; background-color:d5d5d5;" />
+                <h6 style="margin: 0 0 10px 0;">此處小檔案</h6>
+                <div style="margin:10px 0;">
+                    <img style="width:60px;height:60px;vertical-align: top;" src="./images/icon-humidity.png" />
+                    <div style="display: inline-block;">
+                        <h4 class="text-primary">濕度90%</h4>
+                        <h5 sytle="font-size:16px;" class="text-secondary">連續5天</h5>
+                    </div>
+                </div>
+                <div style="margin:10px 0;">
+                    <img style="width:60px;height:60px;vertical-align: top;" src="./images/icon-sun.png" />
+                    <div style="display: inline-block;">
+                        <h4 class="text-warning">日均溫28°C</h4>
+                        <h5 sytle="font-size:16px;" class="text-secondary">連續7天</h5>
+                    </div>
+                </div>
+                <div style="margin:-10px;background: red;text-align: center;border-radius: 0 0 5px 5px;">
+
+                    <span style="color: white;font-size: 10px;">
+                        <i class="fas fa-info-circle"></i>
+                        您所處的地區也符合此檔案的發病條件，請留意
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1ToaqJyPhu9vQmjpWRZ3zA_p-mr9V_I&callback=initMap"
+        async defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        var map;
+        var locations = [
+            ['泰山區', 24.9215717, 121.3281892, 4, "http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg", '2019/07/12 13:59:10'],
+            ['新竹市', 24.796483, 120.952307, 5, "http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg", '2019/07/12 13:59:10'],
+            ['關西區', 24.7708551, 121.0845496, 3, "http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg", '2019/07/12 13:59:10'],
+            ['頭屋鄉', 24.584590, 120.878155, 2, "http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg", '2019/07/12 13:59:10'],
+            ['五結鄉', 24.751001, 121.780339, 1, "http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg", '2019/07/12 13:59:10']
+        ];
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 25.0410155, lng: 121.5384334 },
+                zoom: 9
+            });
+
+            setMark();
+
+        }
+
+        function infoClick(no) {
+            var data = locations[no];
+            $('#infoModal').modal('toggle');
+        }
+
+        function setMark() {
+
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 250,
+            });
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    icon: {
+                        url: './images/oval-copy-5.png',
+                    },
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        var contentString = '<div class="infowindow">' +
+                            '<img class="imgThumb" src="' + locations[i][4] + '"/>' +
+                            '<div class="infotext">' +
+                            '<div >' +
+                            '<h4>最後通報</h4>' +
+                            '<h6>' + locations[i][5] + '</h6>' +
+                            '</div>' +
+                            '<div>' +
+                            '<i class="fa fa-angle-right infoClick" onclick="infoClick(' + i + ')" style="font-size:40px;color:red" ></i>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+
+                        infowindow.setContent(contentString);
+                        infowindow.open(map, marker);
+
+                    }
+                })(marker, i));
+            }
+        }
+    </script>
+
+</body>
+
+</html>

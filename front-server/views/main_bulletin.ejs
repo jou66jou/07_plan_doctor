@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <title>去去病害走</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="">
+  <meta property="og:image" content="facebook.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="" />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style type="text/css">
+    body {
+      background-color: #f0f3f5;
+    }
+
+    .header-background {
+      width: auto;
+      height: 155px;
+      background-image: linear-gradient(112deg, #429321, #b4ec51 100%);
+
+
+      top: 0;
+      width: 100%;
+    }
+
+    .header-title {
+      padding-top: 44px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .header-subtitle-font {
+      font-size: 14px;
+      /*font-weight: 600;*/
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.17px;
+      color: #f48300;
+    }
+
+    .header-subtitle {
+      display: inline;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 10px;
+      text-align: center;
+      width: 57px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+
+    .edit-btn {
+      text-align: center;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 57px;
+      height: 24px;
+      border-radius: 12px;
+      border: solid 1px #ffffff;
+      color: white;
+    }
+
+    .footer-background {
+      width: auto;
+      height: 60px;
+      box-shadow: inset 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+      background-color: rgba(250, 250, 250, 0.9);
+
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-icon {
+      text-align: center;
+    }
+
+    .footer-icon-img {
+      width: 48px;
+      height: 34px;
+    }
+
+    .footer-font-active {
+      font-size: 10px;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.12px;
+      text-align: center;
+      color: #5aa509;
+    }
+
+    .footer-font-inactive {
+      font-size: 10px;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.12px;
+      text-align: center;
+      color: #8e8e93;
+    }
+
+    .news-container {
+      width: auto;
+      height: 225px;
+      border-radius: 17px;
+      box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.15);
+      background-color: #ffffff;
+
+      margin-top: 20px;
+    }
+
+    .news-header {
+      width: auto;
+      height: 60px;
+      border-radius: 17px 17px 0px 0px;
+      background-image: linear-gradient(10deg, #ffffff, #efefef);
+    }
+
+    .news-header-font {
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.14px;
+    }
+
+    .custom-control-input:checked~.custom-control-label::before{
+      border-color: #4cd964 !important;
+    background-color: #4cd964 !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="header-background">
+    <div class="container header-title">
+      <h1>我的通報</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h6 style="color:white;">如果發現了十惡不赦的病害，就告訴我們吧！</h6>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div style="height:55vh;overflow-y: auto;margin:10px;">
+    <div style="vertical-align:middle;  ">
+      <h5 style="display: inline-block;">過去的通報</h5>
+      <button type="button" class="btn btn-success" style="float:right;font-size: 13px; font-weight: 500;letter-spacing: 0.16px;border-radius: 13px;
+        background-color: #5aa509;" data-toggle="modal" data-target="#infoModal"><i
+          class="fas fa-plus"></i>新增通報</button>
+    </div>
+    <div style="margin:20px 0;">
+      <div style="margin:0 20px;width:90%;margin:10px auto;border-radius: 7px;
+      box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;padding:10px;">
+        <img src="./images/plant@3x.png" style="height:50px;width:50px;vertical-align: inherit;" />
+        <div style="display: inline-block;">
+          <h6 style="width: 49px;
+          height: 22px;
+          font-family: PingFangTC;
+          font-size: 16px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.19px;
+          color: #000000;margin-bottom: 0;">稻熱病</h6>
+          <h7 style="width: 126px;
+          height: 18px;
+          font-family: PingFangTC;
+          font-size: 13px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.16px;
+          color: #9b9b9b;">2019/07/12 13:59:10</h7>
+        </div>
+      </div>
+      <div style="width:90%;margin:10px auto;border-radius: 7px;
+      box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;padding:10px;">
+        <img src="./images/plant@3x.png" style="height:50px;width:50px;vertical-align: inherit;" />
+        <div style="display: inline-block;">
+          <h6 style="width: 49px;
+          height: 22px;
+          font-family: PingFangTC;
+          font-size: 16px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.19px;
+          color: #000000;margin-bottom: 0;">稻熱病</h6>
+          <h7 style="width: 126px;
+          height: 18px;
+          font-family: PingFangTC;
+          font-size: 13px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.16px;
+          color: #9b9b9b;">2019/07/14 15:38:10</h7>
+        </div>
+      </div>
+    </div>
+
+    <h5 style=" font-family: PingFangTC;
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.05;
+    letter-spacing: 0.24px;">潛在病害風險</h5>
+
+    <div style="padding:10px;border-radius: 10px; background-color: white;margin:20px;">
+      <div style="margin:10px 0;">
+        <img style="width:60px;height:60px;vertical-align: top;" src="./images/icon-humidity.png" />
+        <div style="display: inline-block;">
+          <h4 class="text-primary">濕度90%</h4>
+          <h5 sytle="font-size:16px;" class="text-secondary">連續5天</h5>
+        </div>
+      </div>
+      <div style="margin:10px 0;">
+        <img style="width:60px;height:60px;vertical-align: top;" src="./images/icon-sun.png" />
+        <div style="display: inline-block;">
+          <h4 class="text-warning">日均溫28°C</h4>
+          <h5 sytle="font-size:16px;" class="text-secondary">連續7天</h5>
+        </div>
+      </div>
+      <div style="margin:-10px;background: red;text-align: center;border-radius: 0 0 5px 5px;">
+        <span style="color: white;font-size: 10px;">
+          <i class="fas fa-info-circle"></i>
+          您所處的地區也符合此檔案的發病條件，請留意
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-background">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-3 footer-icon align-self-center">
+          <a href="./news">
+            <img class="footer-icon-img" src="./images/nav1@3x.png" />
+            <p class="footer-font-inactive">社群警報</p>
+          </a>
+        </div>
+        <div class="col-3 footer-icon align-self-center">
+          <a href="./diseaseMap">
+            <img class="footer-icon-img" src="./images/nav2@3x.png" />
+            <p class="footer-font-inactive">病害地圖</p>
+          </a>
+        </div>
+        <div class="col-3 footer-icon align-self-center">
+          <a href="./community">
+            <img class="footer-icon-img" src="./images/nav3@3x.png" />
+            <p class="footer-font-inactive">社群</p>
+          </a>
+        </div>
+        <div class="col-3 footer-icon align-self-center">
+          <a href="./bulletin">
+            <img class="footer-icon-img" src="./images/nav4Click@3x.png" />
+            <p class="footer-font-active">我的通報</p>
+          </a>
+        </div>
+      </div>
+  </footer>
+
+  <div id="infoModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content" style="padding:10px;border-radius: 10px;">
+        <div class="modal-header">
+          <h6 data-dismiss="modal" style=" font-family: PingFangTC;
+          font-size: 17px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: -0.41px;
+          color: #5aa509;"><i class="fas fa-chevron-left"></i>我的通報</h6>
+          <h5 class="modal-title" style="font-family: SFProText;
+          font-size: 17px;
+          font-weight: 600;position: absolute;left: 45%;">通報細節</h5>
+        </div>
+
+        <div class="modal-body" style="background-color: #f0f3f5;">
+          <h5>分類</h5>
+          <div style="margin-bottom:15px;">
+            <div class="form-control form-control-sm" style="width: 105px;border-radius: 5px;
+            background-color: #5aa509;display: inline-block;color: white;margin:0 3px;">
+              農作物<i class="fas fa-sort-down" style="float:right;"></i>
+            </div>
+            <div class="form-control form-control-sm" style="width: 105px;border-radius: 5px;
+            background-color: #4a90e2;display: inline-block;color: white;margin:0 3px;">
+              水稻<i class="fas fa-sort-down" style="float:right;"></i>
+            </div>
+            <div class="form-control form-control-sm" style="width: 105px;border-radius: 5px;
+            background-color: #f06292;display: inline-block;color: white;margin:0 3px;">
+              稻熱病<i class="fas fa-sort-down" style="float:right;"></i>
+            </div>
+          </div>
+
+          <h5>上傳照片</h5>
+          <div style="margin-bottom:15px;">
+            <img src="./images/plant@3x.png" style="width: 105px;
+            height: 89px;
+            object-fit: contain;" />
+            <img src="./images/addImg@3x.png" style="width: 105px;
+            height: 89px;
+            object-fit: contain;" />
+          </div>
+
+          <h5>我的位置</h5>
+          <div style="margin-bottom:15px;">
+            <img src="./images/gps@3x.png" style="width: 335px;
+              height: 82px;
+              object-fit: contain;" />
+          </div>
+
+          <h5>備註</h5>
+          <div style="margin-bottom:15px;">
+            <textarea class="form-control" rows="3" style="width: 335px;
+            height: 40px;" placeholder="請寫下備註"></textarea>
+          </div>
+
+          <div style="margin-bottom:15px;">
+            <h5 style="display: inline-block;">匿名通報</h5>
+            <div class="custom-control custom-switch" style="display: inline-block;float:right;">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1" style="background-color: #4cd964;">
+              <label class="custom-control-label" for="customSwitch1"></label>
+            </div>
+          </div>
+          <div style="text-align: center;">
+              <button data-dismiss="modal" type="button" class="btn btn-success" style="width: 289px;
+              height: 50px;">上傳通報</button>
+          </div>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <scirpt>
+
+  </scirpt>
+</body>
+
+</html>
