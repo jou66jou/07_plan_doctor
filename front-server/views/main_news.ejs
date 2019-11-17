@@ -18,6 +18,7 @@
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -219,48 +220,108 @@
   </footer>
 
   <div id="infoModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
-  aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content" style="padding:10px;border-radius: 10px;">
-      <div class="modal-header">
-        <h6 data-dismiss="modal" style=" font-family: PingFangTC;
+    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content" style="border-radius: 10px;">
+        <div class="modal-header">
+          <h6 data-dismiss="modal" style=" font-family: PingFangTC;
         font-size: 17px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
         letter-spacing: -0.41px;
-        color: #5aa509;"><i class="fas fa-chevron-left"></i>我的通報</h6>
-        <h5 class="modal-title" style="font-family: SFProText;
+            color: #f48300;"><i class="fas fa-chevron-left"></i>新聞警報</h6>
+          <h5 class="modal-title" style="font-family: SFProText;
         font-size: 17px;
-        font-weight: 600;position: absolute;left: 45%;">通報細節</h5>
+        font-weight: 600;position: absolute;left: 45%;">貼文</h5>
+          <div style="display: inline-block;float:right;">
+            <i style="color:#f48300;" class="far fa-bookmark"></i>
+          </div>
+        </div>
+        <div style="background-color: #f0f3f5;">
+          <div style="margin:20px;">
+            <img src="" style="width:40px;height:40px;" />
+            <div style="display: inline-block;vertical-align: middle;">
+              <h5 style="margin:0;font-size: 12px;">行政院農業委員會桃園區農業改良場 </h5>
+              <h5 style="margin:0;font-size: 12px;color: #888888;">107 年 7 月 9 日</h5>
+            </div>
+            <div style="font-size: 10px;margin:0;color:#5aa509;margin-top:20px;">
+              <a>#水稻</a>
+              <a>#蔬菜</a>
+              <a>#花卉</a>
+            </div>
+          </div>
+
+          <div style="padding:30px;background-color: white; margin:20px;border-radius: 15px;">
+            <p>行政院農業委員會桃園區農業改良場新聞稿</p>
+
+            <p>依據中央氣象局颱風路徑資料，今年第 8 號颱風 瑪莉亞 ，目前逐漸逼近臺灣，侵襲機率甚高，氣象局預估自 7 月 10 日 ( 星期二 ) 午夜接觸台灣東北部陸地，影響台灣最劇烈時間為 7 月 10 日至 11
+              日，致災高風險區為台灣東北部、北部及中部地區，須嚴防強風豪雨。目前北部地區水稻及多項果品正值收穫期， 行政院農業委員會桃園區農業改良場特別呼籲北部地區農友應注意下列防範措施：
+            </p>
+            <p>
+              一、注意氣象報導，即時掌握颱風之範圍、動向、風速、風向及雨量等最新動態，做好防颱準備。
+            </p>
+            <p>
+              二、檢修排水設施，清除田間排水溝雜草，使排水通暢避免積水。注意溫、網室等設施結構及覆蓋資材之穩固性，以及通風、遮陰、灌溉（水塔）、電源設備等之固定及安全性，如有損壞應儘速修補。剪除鄰近樹枝，避免折斷壓毀溫網室。
+            </p>
+            <p>
+              三、水稻生產方面，第一期稻作目前正值黃熟期階段應 儘速收穫，避免穀粒發生穗上發芽。
+            </p>
+            <p>
+              四、蔬菜生產方面，目前正採收或已屆採收期之蔬菜應優先收穫，並利用低溫儲藏保鮮。幼苗期蔬菜及瓜果可利用防雨棚架或覆蓋資材如尼龍紗網、不織布等覆蓋保護，成株蔬菜應即時培土以防止倒伏及大雨沖刷。另可預先備好種子或種苗，以便災後即時復耕。設施蔬菜應疏通周圍排水溝，溫網室之迎風面加強固定措施，以及防止塑膠布及紗網被強風吹襲損壞。
+            </p>
+            <p>
+              五、花卉生產方面，室外栽培之盆花及草花等花卉種類應移入設施內或加強覆蓋保護，設施內盆花除注意設施結構安全外，應加強栽培床架之支撐，以防止倒伏。
+            </p>
+            <p>
+              六、果樹生產方面，果園周圍應加強防風設施，並補強幼株或新植植株支柱，成株宜將枝條誘引固定，減少植株搖動而傷害根部或倒伏。正值收穫期之水蜜桃及高接梨等，除應盡速採收並妥善儲藏外，更應加強果園排水及植株、枝幹架設支柱等措施，以防止落果或枝條斷裂現象。
+              正值開花期或果實發育期之水果 ( 如柑橘類、文旦、甜柿等 ) 應加強果園排水，植株、枝幹架設支柱等措施，以防止落果或枝條斷裂傷害。
+            </p>
+            <p>
+              七、休閒農場方面，應注意強固廣告招牌與室外遊憩及教育設施，並應注意疏通排水系統。位處山區之休閒農場應特別注意水土保持防範措施，以維護遊客安全並減少損失。
+            </p>
+            <p>
+              桃園區農業改良場呼籲農友，唯有做好防颱準備工作，才能將農作物損失降至最低。如農友對農作物防颱準備工作有任何疑問，可洽詢該場農業推廣課，聯絡電話 03-4768216 。
+            </p>
+            <p>
+              聯絡人：桃園區農業改良場
+            </p>
+            <p>
+              發言人 副場長 　傅仰人 03-4768216 分機 101 手機 0919872010
+            </p>
+            <p>
+              副研究員 賴信忠 03-4768216 分機 410
+            </p>
+          </div>
+        </div>
       </div>
-
-
-
-       
-      </diＦv>
     </div>
   </div>
-</div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script>
     var data = [
       {
+        company: "行政院農業委員會桃園區農業改良場",
         title: "荔枝椿象越冬期，成蟲活動力下降，籲請農民移除越冬蟲。彰化縣政府、防檢局及田邊好幫手關心您。",
         date: "108 年 11 月 07 日",
         tag: ["荔枝", "龍眼", "果樹"],
         article: "氣溫逐漸降低，荔枝椿象進入越冬期，成蟲活動力下降，可搖動或敲打樹枝及枝葉，使成蟲震落並收集繳交至各公所..."
       },
       {
+        company: "行政院農業委員會台中區農業改良場",
         title: "紅豆栽培季乾爽，小心薊馬來擾亂。高雄區農改場、防檢局及田邊好幫手關心您。",
         date: "108 年 10 月 24 日",
         tag: ["紅豆", "豆類"],
         article: "目前高屏地區紅豆已近開花期，加上秋風漸起氣候乾爽，極適合薊馬繁殖生長，高雄區農業改良埸（以下簡稱高雄場..."
       },
       {
+        company: "行政院農業委員會台南區農業改良場",
         title: "白粉病好發期，呼籲請農友加強防治工作。雲林縣政府、防檢局及田間好幫手關心您。",
         date: "108 年 10 月 24 日",
         tag: ["水果", "蔬菜"],
@@ -272,11 +333,11 @@
       var template = "";
       for (var i in data) {
         template += '<div class="container">' +
-          '<div class="news-container">' +
+          '<div class="news-container" onclick="modalPopup(' + i + ')">' +
           '<div style="padding:0 10px;" class="news-header">' +
           '<img />' +
           '<div>' +
-          '<h5 style="font-size:12px;margin:0;">行政院農業委員會桃園區農業改良場 </h5>' +
+          '<h5 style="font-size:12px;margin:0;">' + data[i].company + '</h5>' +
           '<h6 style="font-size:10px;margin:0;">' + data[i].date + '</h6>' +
           '</div>' +
           '</div>' +
@@ -298,6 +359,10 @@
       $("#contenter>div").html(template);
     }
     insertNews();
+
+    function modalPopup(no) {
+      $('#infoModal').modal('toggle');
+    }
 
   </script>
 
