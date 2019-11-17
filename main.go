@@ -23,7 +23,7 @@ func main() {
 	e := echo.New()
 	// setting
 	s := &http.Server{
-		Addr:         ":1234",
+		Addr:         ":" + os.Getenv("PORT"),
 		ReadTimeout:  1 * time.Minute,
 		WriteTimeout: 1 * time.Minute,
 	}
