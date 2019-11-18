@@ -140,6 +140,11 @@
       line-height: normal;
       letter-spacing: 0.14px;
     }
+
+    .switchWhite{
+      background-color: white;
+      border-radius: 5px;
+    }
   </style>
 
 </head>
@@ -153,28 +158,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-
+          <div style="background-color: rgba(255, 255, 255, 0.5);border-radius: 5px;text-align: center;height: 28px;">
+            <div id="pastData" onclick="changeModel('0')" class="switchWhite" style="display: inline-block;width:49%;height: 28px;">過去紀錄</div>
+            <div id="futurePredict" onclick="changeModel('1')" style="display: inline-block;width:49%;height: 28px;">未來預測</div>
+          </div>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- <div class="container" style="margin-top: 175px;">
-    <div class="news-container">
-      <div class="news-header">
-      </div>
-    </div>
-  </div>
-  </div> -->
-
-  <!-- <div class="container" style="margin-top: 20px;">
-      <div class="news-container">
-        <div class="news-header">
-          </div>
-        </div>
-      </div>
-    </div> -->
-
 
 </body>
 

@@ -61,6 +61,18 @@
             width: 10px;
             display: inline-block;
         }
+
+        #infoMsg,
+        #infoFutureMsg {
+            background-color: white;
+            width: 325px;
+            height: 125px;
+            position: absolute;
+            bottom: 70px;
+            left: 10%;
+            padding: 10px;
+            visibility: hidden;
+        }
     </style>
 </head>
 
@@ -68,6 +80,31 @@
 
     <% include ./main_disease %>
     <div id="map"></div>
+    <div id="infoMsg">
+        <h5 style="font-size: 16px;
+        font-weight: 600;color: #c61620;"><img src="./images/oval-copy-5.png"
+                style="width:20px;height:20px;" />紅點為過去有通報紀錄之地點 </h5>
+        <div>
+            <hr style="height:1px;width:100%;background-color: #c61620;margin:10px 0;" />
+            <p style="font-size: 13px;width:95%;display: inline-block;
+            font-weight: normal;letter-spacing: 0.16px;">本病菌可經由稻種傳播，稻種發芽後存活在稻株表面，分蘗後期可達葉舌部位，大量增值族群，稻抽穗時病菌感染初穗致病。發病最適...
+            </p>
+
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <div id="infoFutureMsg">
+        <h5 style="font-size: 16px;
+            font-weight: 600;color: #c61620;"><img src="./images/warning.png"
+                style="width:20px;height:20px;" />一周內氣溫/濕度符合發病條件之區域 </h5>
+        <div>
+            <hr style="height:1px;width:100%;background-color: #c61620;margin:10px 0;" />
+            <ul>
+
+            </ul>
+        </div>
+    </div>
     <% include ./footer_disease %>
 
     <div id="infoModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
@@ -75,10 +112,11 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content" style="padding:10px;border-radius: 10px;">
                 <img style="width:100%;height:210px;margin:0 0 10px 0;border-radius: 5px;"
-                    src="http://www.polymer.cn/UploadFile/IndustryNewsPic/20190613115207_0111.jpg" />
+                    src="./images/community_article_2@3x.png" />
                 <h6 class="text-danger" style="font-size: 14px;">最後通報</h6>
-                <h5>2019/07/12 13:59:10</h5>
-                <h7 style="font-size: 12px;">24.994711, 121.577343</h7>
+                <h5 class="infoDate">2019/07/12 13:59:10</h5>
+                <h5 class="infoName">花蓮</h5>
+                <h7 style="infoLocation font-size: 12px;">24.994711, 121.577343</h7>
                 <hr style="width: 100%; height: 0.5px; background-color:d5d5d5;" />
                 <h6 style="margin: 0 0 10px 0;">此處小檔案</h6>
                 <div style="margin:10px 0;">
@@ -114,36 +152,37 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        var map;
+        var map, markers = [];
         var locations = [
-            ['泰山區', 24.9215717, 121.3281892, 4, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
-            ['新竹市', 24.796483, 120.952307, 5, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
-            ['關西區', 24.7708551, 121.0845496, 3, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
-            ['頭屋鄉', 24.584590, 120.878155, 2, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
-            ['五結鄉', 24.751001, 121.780339, 1, "./images/community_article_2@3x.png", '2019/07/12 13:59:10']
+            // ['泰山區', 24.9215717, 121.3281892, 4, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
+            // ['新竹市', 24.796483, 120.952307, 5, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
+            // ['關西區', 24.7708551, 121.0845496, 3, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
+            // ['頭屋鄉', 24.584590, 120.878155, 2, "./images/community_article_2@3x.png", '2019/07/12 13:59:10'],
+            // ['五結鄉', 24.751001, 121.780339, 1, "./images/community_article_2@3x.png", '2019/07/12 13:59:10']
         ];
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 25.0410155, lng: 121.5384334 },
-                zoom: 9
+                center: { lat: 23.927890, lng: 120.964791 },
+                zoom: 7
             });
-
-            setMark();
-
+            // setMark();
+            changeModel(0);
         }
 
         function infoClick(no) {
             var data = locations[no];
+            $("#infoModal .infoDate").text(data[5]);
+            $("#infoModal .infoLocation").text(data[1] + " " + data[2]);
+            $("#infoModal .infoName").text(data[0]);
             $('#infoModal').modal('toggle');
         }
 
         function setMark() {
-
             var infowindow = new google.maps.InfoWindow({
                 maxWidth: 250,
             });
 
-            var marker, i;
+            var i;
 
             for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
@@ -157,6 +196,8 @@
 
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
                     return function () {
+                        // console.log(locations[i]);
+                        nowClickMark = locations[i];
                         var contentString = '<div class="infowindow">' +
                             '<img class="imgThumb" src="' + locations[i][4] + '"/>' +
                             '<div class="infotext">' +
@@ -172,11 +213,109 @@
 
                         infowindow.setContent(contentString);
                         infowindow.open(map, marker);
-
+                        $("#infoMsg").css("visibility", "visible");
+                        $("#infoFutureMsg").css("visibility", "hidden");
                     }
                 })(marker, i));
+                markers.push(marker);
             }
         }
+
+        function futureSetMark() {
+            var i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    icon: {
+                        url: './images/warning.png',
+                    },
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        console.log(locations[i]);
+                        var liString = "";
+                        liString += "<li>備註:" + locations[i][3] + "</li>";
+                        liString += "<li>疾病:" + locations[i][4] + "</li>";
+                        liString += "<li>RH:" + locations[i][5] + "</li>";
+                        $('#infoFutureMsg ul').html(liString);
+                        $("#infoFutureMsg").css("visibility", "visible");
+                        $("#infoMsg").css("visibility", "hidden");
+                    }
+                })(marker, i));
+                markers.push(marker);
+            }
+
+        }
+
+        function DeleteMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        };
+
+        function changeModel(type) {
+            //type:0 過去,:1 未來
+            if (markers.length > 0) DeleteMarkers();
+            if (type == 0) {
+                $("#infoMsg").css("visibility", "visible");
+                $("#infoFutureMsg").css("visibility", "hidden");
+                $("#futurePredict").removeClass('switchWhite');
+                $("#pastData").addClass('switchWhite');
+                $.get("https://coop2019.herokuapp.com/getHistory", function (data) {
+                    data = data.data;
+                    var periods = 2;
+                    var tempLocation = [];
+                    for (var i in data) {
+                        if (data[i].crop == periods) {
+                            var list = data[i].locationInfos;
+                            for (var j in list) {
+                                var locationArr = [];
+                                locationArr.push(list[j].locationName);
+                                locationArr.push(parseFloat(list[j].lat));
+                                locationArr.push(parseFloat(list[j].lon));
+                                locationArr.push(4);
+                                locationArr.push("./images/community_article_2@3x.png");
+                                locationArr.push(list[j].date);
+                                locationArr.push(list[j].disease);
+                                tempLocation.push(locationArr);
+                            }
+                        }
+                    }
+                    locations = tempLocation;
+                    setMark();
+                });
+            } else {
+
+                $("#infoMsg").css("visibility", "hidden");
+                $("#pastData").removeClass('switchWhite');
+                $("#futurePredict").addClass('switchWhite');
+                $.get("https://coop2019.herokuapp.com/getWarning", function (data) {
+                    data = data.data;
+                    console.log(data);
+                    var locationArr = [];
+                    for (var i in data) {
+                        var locationInfo = data[i].locationInfos;
+                        for (var j in locationInfo) {
+                            var locationItem = [];
+                            locationItem.push(locationInfo[j].locationName);
+                            locationItem.push(locationInfo[j].lat);
+                            locationItem.push(locationInfo[j].lon);
+                            locationItem.push(data[i].comment);
+                            locationItem.push(data[i].disease);
+                            locationItem.push(data[i].RH);
+                            locationArr.push(locationItem);
+                        }
+                    }
+                    locations = locationArr;
+                    futureSetMark();
+                });
+            }
+        }  
     </script>
 
 </body>
