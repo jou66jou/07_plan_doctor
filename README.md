@@ -14,6 +14,6 @@ ok, we keep going get number 1.
 [過去紀錄] https://coop2019.herokuapp.com/getHistory
 [未來預測] https://coop2019.herokuapp.com/getWarning
 
-# HOMEPAGE :
+# WEBSIT :
 
 [Webapp] https://coop2019-front.herokuapp.com/news
